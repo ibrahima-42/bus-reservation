@@ -1,4 +1,4 @@
-package bus.Reservation;
+package bus.reservation;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

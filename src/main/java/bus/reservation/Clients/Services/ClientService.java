@@ -1,7 +1,7 @@
-package bus.Reservation.Clients.Services;
+package bus.reservation.Clients.Services;
 
-import bus.Reservation.Clients.Entities.Client;
-import bus.Reservation.Clients.Repository.ClientRepository;
+import bus.reservation.Clients.Entities.Client;
+import bus.reservation.Clients.Repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

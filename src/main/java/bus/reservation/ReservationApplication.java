@@ -1,4 +1,4 @@
-package bus.Reservation;
+package bus.reservation;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
