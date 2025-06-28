@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,11 +15,11 @@ import java.util.List;
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     //verifier si l'entite na pas été modifier entre temps
-    @Version
-    private Integer version;
+//    @Version
+//    private Integer version;
 
     private String nom;
     private String prenom;
@@ -31,20 +30,40 @@ public class Client {
     private List<Reservation> reservations;
 
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public void setNom(String nom) {
         this.nom = nom;
     }
 
+    public String getNom() {
+        return nom;
+    }
+
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
 
+    public String getPrenom() {
+        return prenom;
+    }
+
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTelephone() {
+        return telephone;
     }
 
     public void setTelephone(String telephone) {

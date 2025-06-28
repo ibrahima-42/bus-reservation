@@ -39,7 +39,7 @@ public class initVoyage implements CommandLineRunner {
         voyage1.setVilleArrivee("Dakar");
         voyage1.setDateDepart(LocalDate.now());
         voyage1.setHeureDepart(LocalTime.now());
-        voyage1.setPlaceDisponibles(2);
+        voyage1.setPlaceDisponibles(15);
         voyageRepository.save(voyage1);
 
         Voyage voyage2 = new Voyage();
@@ -47,7 +47,7 @@ public class initVoyage implements CommandLineRunner {
         voyage2.setVilleArrivee("Mbour");
         voyage2.setDateDepart(LocalDate.now());
         voyage2.setHeureDepart(LocalTime.now());
-        voyage2.setPlaceDisponibles(5);
+        voyage2.setPlaceDisponibles(20);
         voyageRepository.save(voyage2);
         //end init voyage
 
@@ -72,14 +72,14 @@ public class initVoyage implements CommandLineRunner {
         reservation1.setClient(client1);
         reservation1.setVoyage(voyage1);
         reservation1.setDateReservation(LocalDate.now());
-        reservation1.setNombrePlaces(voyage1.getPlaceDisponibles());
+        reservation1.setNombrePlaces(3);
         reservationRepository.save(reservation1);
 
         Reservation reservation2 = new Reservation();
         reservation2.setClient(client2);
         reservation2.setVoyage(voyage2);
         reservation2.setDateReservation(LocalDate.now());
-        reservation2.setNombrePlaces(voyage2.getPlaceDisponibles());
+        reservation2.setNombrePlaces(1);
         reservationRepository.save(reservation2);
         System.out.println("#######Voyage et reservation initialisation suceess");
     }
