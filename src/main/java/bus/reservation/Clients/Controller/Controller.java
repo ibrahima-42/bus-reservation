@@ -67,7 +67,7 @@ public class Controller {
         client.setPrenom(dto.getPrenom());
         client.setEmail(dto.getEmail());
         client.setTelephone(dto.getTelephone());
-        return client;
+        return client;  
     }
 
     //convertir lentite en dto
