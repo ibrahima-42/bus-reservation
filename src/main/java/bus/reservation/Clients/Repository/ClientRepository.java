@@ -9,6 +9,6 @@ import java.util.Optional;
 @Repository
 public interface ClientRepository extends JpaRepository<bus.reservation.Clients.Entities.Client, Integer> {
     @Override
-    Optional<Client> findById(Integer integer);
+    Optional<Client> findById(Integer id);
 
 }

@@ -39,12 +39,14 @@ public class initVoyage implements CommandLineRunner {
         voyage1.setVilleArrivee("Dakar");
         voyage1.setDateDepart(LocalDate.now());
         voyage1.setHeureDepart(LocalTime.now());
+        voyage1.setPrix(6000);
         voyage1.setPlaceDisponibles(15);
         voyageRepository.save(voyage1);
 
         Voyage voyage2 = new Voyage();
         voyage2.setVilleDepart("Dakar");
         voyage2.setVilleArrivee("Mbour");
+        voyage2.setPrix(5000);
         voyage2.setDateDepart(LocalDate.now());
         voyage2.setHeureDepart(LocalTime.now());
         voyage2.setPlaceDisponibles(20);

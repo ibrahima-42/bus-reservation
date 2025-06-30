@@ -15,9 +15,8 @@ public class ReservationDto {
     private LocalDate dateReservation;
     private int nombrePlaces;
 
-    private ClientDto client;
-    private VoyageDto voyage;
-
+    private Integer clientId;
+    private Integer voyageId;
 
     public Long getId() {
         return id;
@@ -43,19 +42,19 @@ public class ReservationDto {
         this.nombrePlaces = nombrePlaces;
     }
 
-    public ClientDto getClient() {
-        return client;
+    public Integer getClientId() {
+        return clientId;
     }
 
-    public void setClient(ClientDto client) {
-        this.client = client;
+    public void setClientId(Integer clientId) {
+        this.clientId = clientId;
     }
 
-    public VoyageDto getVoyage() {
-        return voyage;
+    public Integer getVoyageId() {
+        return voyageId;
     }
 
-    public void setVoyage(VoyageDto voyage) {
-        this.voyage = voyage;
+    public void setVoyageId(Integer voyageId) {
+        this.voyageId = voyageId;
     }
 }

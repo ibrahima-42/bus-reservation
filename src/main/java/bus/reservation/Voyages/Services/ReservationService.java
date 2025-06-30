@@ -4,6 +4,7 @@ import bus.reservation.Voyages.Repository.ReservationRepository;
 import bus.reservation.Voyages.entities.Reservation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,7 +26,7 @@ public class ReservationService {
     }
 
     //fonction pour ajouter une reservation
-    public Reservation addReservation(Reservation reservation) {
+    public Reservation addReservation(@RequestBody Reservation reservation) {
         return reservationRepository.save(reservation);
     }
 

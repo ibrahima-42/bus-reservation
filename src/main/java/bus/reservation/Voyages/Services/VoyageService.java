@@ -18,12 +18,12 @@ public class VoyageService {
     }
 
     //fonction pour cree un voyage
-    public Voyage createVoyage(Voyage voyage) {
+    public Voyage addVoyage(Voyage voyage) {
         return voyageRepository.save(voyage);
     }
 
     //fonction pour supprimer un voyage
-    public void deleteVoyage(Long id) {
+    public void deleteVoyage(Integer id) {
         voyageRepository.deleteById(id);
     }
 

@@ -18,15 +18,24 @@ public class Voyage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String villeDepart;
     private String villeArrivee;
     private LocalDate dateDepart;
     private LocalTime heureDepart;
+    private int prix;
     private int placeDisponibles;
 
     @OneToMany (mappedBy = "voyage", cascade = CascadeType.ALL)
     private List<Reservation> reservations;
+
+    public int getPrix() {
+        return prix;
+    }
+
+    public void setPrix(int prix) {
+        this.prix = prix;
+    }
 
     public String getVilleDepart() {
         return villeDepart;
