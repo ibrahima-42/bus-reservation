@@ -38,6 +38,7 @@ public class VoyageController {
         voyage.setPlaceDisponibles(voyageDto.getPlaceDisponibles());
         voyage.setHeureDepart(voyageDto.getHeureDepart());
         voyage.setDateDepart(voyageDto.getDateDepart());
+        voyage.setCompagny(voyageDto.getCompagny());
         voyage.setVilleDepart(voyageDto.getVilleDepart());
         voyage.setVilleArrivee(voyageDto.getVilleArrivee());
         return  voyage;

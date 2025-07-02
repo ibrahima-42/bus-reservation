@@ -23,6 +23,7 @@ public class Voyage {
     private String villeArrivee;
     private LocalDate dateDepart;
     private LocalTime heureDepart;
+    private String Compagny;
     private int prix;
     private int placeDisponibles;
 
@@ -35,6 +36,14 @@ public class Voyage {
 
     public void setPrix(int prix) {
         this.prix = prix;
+    }
+
+    public String getCompagny() {
+        return Compagny;
+    }
+
+    public void setCompagny(String compagny) {
+        Compagny = compagny;
     }
 
     public String getVilleDepart() {

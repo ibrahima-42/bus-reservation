@@ -12,6 +12,7 @@ public class VoyageDto {
     private LocalDate dateDepart;
     private LocalTime heureDepart;
     private int placeDisponibles;
+    private String compagny;
     private  int prix;
 
     public Long getId() {
@@ -24,6 +25,14 @@ public class VoyageDto {
 
     public int getPrix() {
         return prix;
+    }
+
+    public String getCompagny() {
+        return compagny;
+    }
+
+    public void setCompagny(String compagny) {
+        this.compagny = compagny;
     }
 
     public void setPrix(int prix) {

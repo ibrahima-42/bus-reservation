@@ -28,7 +28,6 @@ public class initVoyage implements CommandLineRunner {
     @Autowired
     private ReservationRepository reservationRepository;
 
-
     public void run(String... args) throws Exception {
         System.out.println("#######initVoyage");
         System.out.println("#######Starting des voyage ..............");
@@ -37,6 +36,7 @@ public class initVoyage implements CommandLineRunner {
         Voyage voyage1 = new Voyage();
         voyage1.setVilleDepart("Saint-louis");
         voyage1.setVilleArrivee("Dakar");
+        voyage1.setCompagny("Mashalla-Transport");
         voyage1.setDateDepart(LocalDate.now());
         voyage1.setHeureDepart(LocalTime.now());
         voyage1.setPrix(6000);
@@ -46,6 +46,7 @@ public class initVoyage implements CommandLineRunner {
         Voyage voyage2 = new Voyage();
         voyage2.setVilleDepart("Dakar");
         voyage2.setVilleArrivee("Mbour");
+        voyage2.setCompagny("Dem-Dikk");
         voyage2.setPrix(5000);
         voyage2.setDateDepart(LocalDate.now());
         voyage2.setHeureDepart(LocalTime.now());
@@ -67,7 +68,7 @@ public class initVoyage implements CommandLineRunner {
         client2.setEmail("mavie10@icloud.com");
         client2.setTelephone("+221 771566814");
         clientRepository.save(client2);
-        //end init voyage
+        //end init client
 
         //init reseration
         Reservation reservation1 = new Reservation();
@@ -83,6 +84,7 @@ public class initVoyage implements CommandLineRunner {
         reservation2.setDateReservation(LocalDate.now());
         reservation2.setNombrePlaces(1);
         reservationRepository.save(reservation2);
+        //end init reservation
         System.out.println("#######Voyage et reservation initialisation suceess");
     }
 }
