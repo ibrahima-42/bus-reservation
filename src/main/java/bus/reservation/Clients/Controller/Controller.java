@@ -3,7 +3,6 @@ package bus.reservation.Clients.Controller;
 
 import bus.reservation.Clients.Dto.ClientDto;
 import bus.reservation.Clients.Entities.Client;
-import bus.reservation.Clients.Repository.ClientRepository;
 import bus.reservation.Clients.Services.ClientService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +43,6 @@ public class Controller {
             e.printStackTrace(); //pour afficher lerreur dans la console
             throw  e; //retourner une reponse personnalier
         }
-
     }
 
     //fonction pour supprimer un client
