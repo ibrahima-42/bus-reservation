@@ -1,5 +1,6 @@
+FROM --platform=linux/amd64 mysql:8.0
 # Étape 1 : Utiliser une image avec Java
-FROM openjdk:17-jdk-alpine
+FROM openjdk:26-trixie
 
 # Étape 2 : Ajouter un argument pour le jar
 ARG JAR_FILE=target/*.jar

@@ -1,13 +1,12 @@
 version: '3.8'
 services:
-  mysql:
-    image: mysql:8
-    container_name: mysql
+  mysqldb:
+    #platform: linux/amd64
+    image: mysql:latest
+    #container_name: mysql1
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: reservation
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
     ports:
       - "3307:3306"
     networks:
@@ -19,13 +18,14 @@ services:
       retries: 5
 
   reservation-app:
-    build: .
+    #build: .
+    image: openjdk:26-jdk-trixie
     container_name: reservation-app
     depends_on:
-      mysql:
+      mysqldb:
         condition: service_healthy
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/reservation?useSSL=false&serverTimezone=UTC
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/reservation?useSSL=false&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
     ports:

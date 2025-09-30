@@ -63,9 +63,9 @@ public class initVoyage implements CommandLineRunner {
         clientRepository.save(client1);
 
         Client client2 = new Client();
-        client2.setNom("Diedhiou");
-        client2.setPrenom("laila");
-        client2.setEmail("mavie10@icloud.com");
+        client2.setNom("Ange");
+        client2.setPrenom("dgn");
+        client2.setEmail("ange10@icloud.com");
         client2.setTelephone("+221 771566814");
         clientRepository.save(client2);
         //end init client

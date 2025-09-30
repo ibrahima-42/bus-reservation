@@ -23,11 +23,13 @@ public class Reservation {
 
     @ManyToOne
     @JoinColumn(name = "client_id")
+    @com.fasterxml.jackson.annotation.JsonIgnore
     private Client client;
 
 
     @ManyToOne
     @JoinColumn(name = "voyage_id")
+    @com.fasterxml.jackson.annotation.JsonIgnore
     private Voyage voyage;
 
     public Long getId() {
