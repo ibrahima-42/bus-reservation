@@ -1,18 +1,21 @@
 package bus.reservation.Voyages.entities;
 
 import bus.reservation.Clients.Entities.Client;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Reservation {
+public class Reservation implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,14 +26,15 @@ public class Reservation {
 
     @ManyToOne
     @JoinColumn(name = "client_id")
-    @com.fasterxml.jackson.annotation.JsonIgnore
+//    @com.fasterxml.jackson.annotation.JsonIgnore
+    @JsonBackReference
     private Client client;
-
 
     @ManyToOne
     @JoinColumn(name = "voyage_id")
-    @com.fasterxml.jackson.annotation.JsonIgnore
+    @JsonBackReference(value = "voyage-reservations")
     private Voyage voyage;
+
 
     public Long getId() {
         return id;

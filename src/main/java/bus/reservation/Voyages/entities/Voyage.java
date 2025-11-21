@@ -1,11 +1,13 @@
 package bus.reservation.Voyages.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
@@ -14,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Voyage {
+public class Voyage implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,8 +29,10 @@ public class Voyage {
     private int prix;
     private int placeDisponibles;
 
-    @OneToMany (mappedBy = "voyage", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "voyage")
+    @JsonManagedReference(value = "voyage-reservations")
     private List<Reservation> reservations;
+
 
     public int getPrix() {
         return prix;
